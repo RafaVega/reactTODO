@@ -1,0 +1,117 @@
+body{
+  background: rgb(168,126,167);
+  background: linear-gradient(137deg, rgba(168,126,167,1) 0%, rgba(255,255,255,1) 50%, rgba(157,208,211,1) 100%);
+  height: 100vh;
+}
+.borderR{
+  border-radius: 10px;
+}
+.container{
+  padding: 2% 5%;
+  display: flex;justify-content: center;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.newTaskWrap{
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  padding: 0 2%;
+  width: 30%;
+  margin-right: 25px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  background: #F8F8F8;
+  z-index: 0;
+}
+
+.newTaskWrap:hover {
+  box-shadow: 0 25px 40px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.newTaskForm{
+  display: flex;
+  flex-direction: column;
+}
+
+.newTaskForm img{
+  border-radius: 50px;
+}
+
+.myTaskWrap{
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  /* border: 1px solid black; */
+}
+
+/*ANIMATED SEPERATOR*/
+.seperator-wrapper {
+  width: 100%;  
+  position: fixed;
+  top: 0;
+}
+
+.seperator {
+  width: 100%;
+  height: 5px;
+  animation: rotate 3s infinite linear;
+  -webkit-animation: rotate 10s infinite linear;
+}
+@-webkit-keyframes rotate {
+  from {
+    background-position: -3000px;
+  }
+  to { 
+    background-position: 0px;
+  }
+}
+
+@keyframes rotate {
+  from {
+    background-position: -3000px;
+  }
+  to { 
+    background-position: 0px;
+  }
+}
+
+.gradient {
+  background: rgb(48,255,144); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(48,255,144,1) 0%, rgba(237,45,237,1) 25%, rgba(201,152,38,1) 50%, rgba(48,255,230,1) 75%, rgba(48,255,144,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(48,255,144,1)), color-stop(25%,rgba(237,45,237,1)), color-stop(50%,rgba(201,152,38,1)), color-stop(75%,rgba(48,255,230,1)), color-stop(100%,rgba(48,255,144,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(48,255,144,1) 0%,rgba(237,45,237,1) 25%,rgba(201,152,38,1) 50%,rgba(48,255,230,1) 75%,rgba(48,255,144,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(48,255,144,1) 0%,rgba(237,45,237,1) 25%,rgba(201,152,38,1) 50%,rgba(48,255,230,1) 75%,rgba(48,255,144,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(48,255,144,1) 0%,rgba(237,45,237,1) 25%,rgba(201,152,38,1) 50%,rgba(48,255,230,1) 75%,rgba(48,255,144,1) 100%); /* IE10+ */
+background: linear-gradient(to right,  rgba(48,255,144,1) 0%,rgba(237,45,237,1) 25%,rgba(201,152,38,1) 50%,rgba(48,255,230,1) 75%,rgba(48,255,144,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#30ff90', endColorstr='#30ff90',GradientType=1 ); /* IE6-9 */
+
+}
+
+/*INPUT NEW TASK*/
+/* necessary to give position: relative to parent. */
+:focus{outline: none;}
+
+.newTaskInputWrap{float: left; position: relative;} /* necessary to give position: relative to parent. */
+.newTaskInput{font: 15px/24px "Lato", Arial, sans-serif; color: #333; width: 100%; box-sizing: border-box; letter-spacing: 1px;}
+
+.newTaskInput
+{border: 1px solid #000; padding: 7px 14px; transition: 0.4s; background: transparent;}
+
+.newTaskInput ~ .focus-border:before,
+.newTaskInput ~ .focus-border:after{content: ""; position: absolute; top: -1px; left: 50%; width: 0; height: 2px; background-color: #604caf; transition: 0.4s;}
+.newTaskInput ~ .focus-border:after{top: auto; bottom: 0;}
+.newTaskInput ~ .focus-border i:before,
+.newTaskInput ~ .focus-border i:after{content: ""; position: absolute; top: 50%; left: 0; width: 2px; height: 0; background-color: #604caf; transition: 0.6s;}
+.newTaskInput ~ .focus-border i:after{left: auto; right: 0;}
+.newTaskInput:focus ~ .focus-border:before,
+.newTaskInput:focus ~ .focus-border:after,
+.has-content.newTaskInput ~ .focus-border:before,
+.has-content.newTaskInput ~ .focus-border:after{left: 0; width: 100%; transition: 0.4s;}
+.newTaskInput:focus ~ .focus-border i:before,
+.newTaskInput:focus ~ .focus-border i:after,
+.has-content.newTaskInput ~ .focus-border i:before,
+.has-content.newTaskInput ~ .focus-border i:after{top: -1px; height: 100%; transition: 0.6s;}
+.newTaskInput ~ label{position: absolute; left: 14px; width: 100%; top: 10px; color: #000; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.newTaskInput:focus ~ label, .has-content.newTaskInput ~ label{top: -18px; left: 0; font-size: 12px; color: #604caf; transition: 0.3s;}
